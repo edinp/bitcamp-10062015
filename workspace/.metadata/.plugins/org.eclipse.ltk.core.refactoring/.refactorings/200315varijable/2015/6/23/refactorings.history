@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;TextIO.java&apos; to &apos;Objects/src/Models&apos;&#x0A;- Original project: &apos;200315varijable&apos;&#x0A;- Destination element: &apos;Objects/src/Models&apos;&#x0A;- Original element: &apos;Day9.TextIO.java&apos;" description="Copy compilation unit" destination="=Objects/src&lt;Models" element1="/src&lt;Day9{TextIO.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1433154304858" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,62 @@
+package API;
+
+import java.awt.Font;
+
+public class Vjezbe1 {
+
+	public static void main(String[] args) {
+		
+//		System.out.println(getAreaOfSquare(-1));
+
+		Font f = new Font ("Times New Roman", Font.PLAIN, 18);
+		printFontDetails(f);
+		
+		int n = 0;
+		int m = 0;
+		
+		for (int i = 0; i<args.length;) {
+			String str = args[i];
+			String str1 = args[i+1];
+			n = Integer.parseInt(str);
+			m = Integer.parseInt(str1);
+		}
+		
+		int divide = n/m;
+		
+		System.out.println(divide);
+		
+	}
+	
+	/**
+	 * Calculates area of square.
+	 * <p>
+	 * @param a - one side length
+	 * @return Area of Square
+	 */
+//	
+//	public static double getAreaOfSquare(double a) {
+//		
+//		if (a < 0) {
+//			throw new IllegalArgumentException("Negative number");
+//		}
+//
+//		double area = a*a;
+//		
+//		return area;
+//		
+//		
+//	}
+	
+	public static void printFontDetails (Font f) {
+		
+		if(f==null){
+			throw new NullPointerException("Nepoznat broj");
+		}
+		
+		System.out.println("Velicina fonta");
+		System.out.println(f.getSize());
+		
+	}
+	
+	
+}

@@ -1,0 +1,55 @@
+package Arrays2D;
+
+import java.util.Arrays;
+
+public class Vjezbe1 {
+
+	/**
+	 * Determins if matrix is singular.
+	 * <p>
+	 * @param matrix - many many arrays :)
+	 * @return - If it is singular, returns true. Else-false.
+	 */
+	public static boolean isSingular (int[][] matrix) {
+		
+		if ((matrix[0][0]*matrix[1][1]*matrix[2][2] + 
+			matrix[0][1]*matrix[1][2]*matrix[2][0] +
+			matrix[0][2]*matrix[1][0]*matrix[2][1] -
+			matrix[2][0]*matrix[1][1]*matrix[0][2] -
+			matrix[2][1]*matrix[1][2]*matrix[0][0] -
+			matrix[2][2]*matrix[1][0]*matrix[0][1]) == 0) {
+			return true;
+			}
+		return false;
+		}
+	
+	
+	public static void main(String[] args) {
+		
+		int[][] matrix = { {2,1,1}, {-1,-1,0}, {1,0,1} };
+
+		System.out.println("Matrix is " + isSingular(matrix) + ".");
+		
+	
+		TextIO.readFile("src/Arrays2D/matrix.txt");
+		String kordinate = TextIO.getln();
+		String parts[] = kordinate.split(" ");
+		int a = Integer.parseInt(parts[0]);
+		int b = Integer.parseInt(parts[1]);
+		
+		String[][] matrix2 = new String[a][b];
+		
+		String firstArr = TextIO.getln();
+		String parts1[] = firstArr.split(" ");
+		String secondArr = TextIO.getln();
+		String parts2[] = secondArr.split(" ");
+		
+		matrix2[0] = parts1;
+		matrix2[1] = parts2;
+		
+		System.out.println(matrix2);
+		
+
+	}
+
+}

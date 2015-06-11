@@ -1,0 +1,28 @@
+package Arrays2D;
+
+import java.util.Scanner;
+
+public class NizzHelper {
+
+	public static void fillNizz (int[][] nizz) {
+		Scanner in = new Scanner(System.in);
+		
+		for (int i = 0; i < nizz.length; i++) {
+			System.out.println("Please enter " + nizz[i].length + " elements of " + i + " row");
+			for (int j = 0; j < nizz[i].length; j++) {	
+				nizz[i][j] = in.nextInt();
+			} 
+		} 
+		
+		in.close();
+	}	
+		
+	public static void print2DArray(int[][] nizz) {
+		
+		for (int i = 0; i < nizz.length; i++) {
+			for (int j = 0; j < nizz[i].length; j++) {
+				System.out.print(nizz[i][j] + " ");
+			} System.out.println();
+		}
+	}
+}

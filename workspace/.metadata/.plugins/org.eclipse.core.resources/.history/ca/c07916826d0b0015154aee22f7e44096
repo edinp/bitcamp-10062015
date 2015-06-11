@@ -1,0 +1,117 @@
+package Day15;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.util.Arrays;
+
+public class EOF {
+
+	public static String merge (String s1, String s2) {
+		
+		int a = s1.length();
+		int b = a/2;
+		
+		String merge = s1.substring(0, b) + s2 + s1.substring(b, s1.length());
+		return merge;
+	
+	}
+	
+	public static String getFirst (String s1, String s2, String s3) {
+		
+		
+		String s = "";
+		int a1 = s1.compareToIgnoreCase(s2);
+		if (a1<0){
+			s = s1;
+		} else {
+			s = s2;
+		}
+		
+		a1 = s.compareToIgnoreCase(s3);
+		if (a1<0){
+			return s;
+		} else {
+			return s3;
+		}
+		
+	}	
+	
+	
+	
+	public static String getTheRest (String s1, String s2) {
+		
+		String s = "";
+		
+		int a = s1.indexOf(s2);
+		if (a < 0) {
+			return null;
+			
+		} else {
+		s = s1.substring(a);
+		
+		return s;
+		
+		}
+		
+	}
+	
+	public static void writeToFile (String filename, String msg) {
+		
+		TextIO.writeFile(filename);
+		TextIO.put(msg);
+		
+		
+	}
+	
+	
+	public static int[] getArray(int n, int m) {
+		
+		
+		int[] niz = new int[10];
+		
+		for(int i = n; i<10; i++){
+			niz[i] = m;
+			}
+
+		return niz;
+
+	}
+	
+	
+	public static int[] getArray2 (int n, int k) {
+		
+		int[] niz = new int[n];
+		int broj = 0;
+		for (int i = 1; i <= k; i++){
+			niz[i] = broj;
+		}
+		
+		return niz;
+		
+		
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		String ab = "String";
+		String ba = "int";
+		String ac = "cda";
+		
+		
+		System.out.println(merge(ab,ba));
+		
+		System.out.println(getFirst(ab, ba, ac));
+		
+		System.out.println(getTheRest(ab, ba));
+		
+		writeToFile("src/Day15/test.txt", "BitCamp");
+		
+		System.out.println(Arrays.toString(getArray(2,3)));
+		
+		System.out.println(Arrays.toString(getArray(5,3)));
+
+	}
+
+}

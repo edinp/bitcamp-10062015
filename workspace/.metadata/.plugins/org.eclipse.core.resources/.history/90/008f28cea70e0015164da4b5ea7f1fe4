@@ -1,0 +1,54 @@
+package Draw;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+
+public class Main {
+
+	public static void main(String[] args) {
+		DrawWindow w = new DrawWindow();
+		draw(w);
+	}
+
+	public static void draw(DrawWindow w) {
+		BufferedImage img = new BufferedImage(1200, 800, BufferedImage.TYPE_INT_ARGB);
+		Graphics g = img.getGraphics();
+		// **** Draw here ****
+		
+
+		
+		g.setColor(Color.BLACK);
+		g.drawRect(10, 10, 400, 200);
+		
+		g.setColor(Color.BLUE);
+		g.fillRect(10, 10, 400, 20);
+		
+		g.setColor(Color.WHITE);
+		g.fillRect(15, 15, 10, 10);
+		
+		g.setColor(Color.RED);
+		g.fillRect(370, 10, 30, 15);
+		g.setColor(Color.WHITE);
+		g.drawString("X", 382, 22);
+		g.setColor(Color.BLACK);
+		g.drawString("_", 350, 22);
+		g.drawString("JAVA Drawing", 170, 24);
+		g.drawString("An array of numbers", 150, 70);
+		g.drawString("Type: int", 180, 130);
+	
+		Integer num = 0;
+		int x = 25;
+		for(int i = 0; i <=10; i++){
+			g.drawRect(x, 80, 34, 34);
+			num = (int)(10*Math.random());
+			g.drawString(num.toString(), x+10, 100);
+			x+=34;
+		}
+		
+		
+		// *******************
+		w.setImage(img);
+	}
+}

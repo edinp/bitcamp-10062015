@@ -1,0 +1,4 @@
+Name:            Edin
+Email:           edin.pilavdzic@bitcamp.ba
+Favorite Color:  Red
+Yearly Income:   $100,000.00

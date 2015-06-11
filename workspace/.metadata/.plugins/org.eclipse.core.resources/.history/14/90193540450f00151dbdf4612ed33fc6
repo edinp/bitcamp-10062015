@@ -1,0 +1,52 @@
+package Arrays2D;
+
+import java.util.Arrays;
+
+public class Predavanja1 {
+	
+	public static void print1DArray (int[] array) {
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " "); 
+		}
+	}
+	
+	public static void print2DArray (int[][] array) {
+		for (int i = 0; i < array.length; i++) {
+			print1DArray(array[i]);
+		}
+	}
+	
+//	public static int[] getColumn (int[][] array, int column) {
+//		int[] oneColumn = new int
+//		
+//		for (int i = 0; i < array[i].length; i++) {
+//			array[0] = 
+//		
+//		}
+//	}
+
+	public static void main(String[] args) {
+		
+
+		int[] niz = new int[] {1, 2, 3, 4};
+		
+		print1DArray(niz);
+		
+		
+		int[][] nizz = new int[4][5];
+		nizz[0][0] = 1;
+		nizz[0][1] = 2;
+		nizz[0][2] = 3;
+		nizz[0][3] = 4;
+		nizz[0][4] = 5;
+		nizz[1][0] = 6;
+		nizz[1][1] = 7;
+		nizz[1][2] = 8;
+		nizz[1][3] = 9;
+		nizz[1][4] = 10;
+		
+		print2DArray(nizz);
+
+	}
+
+}

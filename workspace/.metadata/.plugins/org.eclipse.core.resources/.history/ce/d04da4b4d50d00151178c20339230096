@@ -1,0 +1,23 @@
+package API;
+
+public class Vjezbe1 {
+
+	public static void main(String[] args) {
+		
+		System.out.println(getAreaOfSquare(-1));
+
+	}
+	
+	public static double getAreaOfSquare(double a) {
+		
+		if (a < 0) {
+			throw new IllegalArgumentException("Negative number");
+		}
+
+		double area = a*a;
+		
+		return area;
+		
+		
+	}
+}

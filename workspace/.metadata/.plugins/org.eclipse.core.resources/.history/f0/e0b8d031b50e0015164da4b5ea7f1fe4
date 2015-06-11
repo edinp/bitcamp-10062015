@@ -1,0 +1,35 @@
+package Draw;
+
+public class Igrica {
+
+	public static void main(String[] args) {
+		
+		String a1 = "+++++++";
+		String a2 = "P + + +";
+		String a3 = "+ +   +";
+		String a4 = "+   + +";
+		String a5 = "+++++F+";
+		
+		System.out.println(a1);
+		System.out.println(a2);
+		System.out.println(a3);
+		System.out.println(a4);
+		System.out.println(a5);
+		
+		
+		if (args[0] == "D" && a2.charAt(1) != '+'){
+			a2 = " P+ + +";
+		System.out.println(a1);
+		System.out.println(a2);
+		System.out.println(a3);
+		System.out.println(a4);
+		System.out.println(a5);
+		
+		}
+		
+		
+		
+
+	}
+
+}

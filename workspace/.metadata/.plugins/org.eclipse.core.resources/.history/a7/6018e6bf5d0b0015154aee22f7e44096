@@ -1,0 +1,52 @@
+package Day15;
+
+public class EOF {
+
+	public static String merge (String s1, String s2) {
+		
+		int a = s1.length();
+		int b = a/2;
+		
+		String merge = s1.substring(0, b) + s2 + s1.substring(b, s1.length());
+		return merge;
+	
+	}
+	
+	public static String getFirst (String s1, String s2, String s3) {
+		
+		
+		System.out.println(s1.compareToIgnoreCase(s2));
+		
+		String s = "";
+		int a1 = s1.compareToIgnoreCase(s2);
+		if (a1<0){
+			s = s1;
+		} else {
+			s = s2;
+		}
+		
+		a1 = s.compareToIgnoreCase(s3);
+		if (a1<0){
+			return s;
+		} else {
+			return s3;
+		}
+		
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		String ab = "camp";
+		String ba = "azra";
+		System.out.println(merge(ab,ba));
+		
+		System.out.println("Razlika " + ab.compareTo(ba));
+		
+		String ac = "edin";
+		System.out.println(getFirst(ab, ba, ac));;
+
+	}
+
+}

@@ -1,0 +1,171 @@
+package Arrays2D;
+
+import java.util.Arrays;
+
+public class Vjezbe1 {
+	
+	public static void main(String[] args) {
+		
+		int[][] matrix = { {2,1,1}, {-1,-1,0}, {1,0,1} };
+
+		System.out.println("Matrix is " + isSingular(matrix) + ".");
+		
+		arrayFromFile("src/Arrays2D/matrix.txt");
+		System.out.println();
+		
+		int[][] input = { 
+				{0,0,0,0,0,-1,0,0},
+				{0,0,0,0,0,0,0,0},
+				{0,0,-1,0,0,0,0,-1},
+				{0,0,0,0,0,0,0,0},
+				{0,0,0,0,0,-1,0,-1},
+				{0,0,0,0,-1,-1,0,0},
+				{0,-1,0,0,0,0,-1,0},
+				{0,0,0,0,-1,0,0,0} 
+				};
+		
+		int counter = 0;
+		
+		for (int i = 0; i < input.length; i++) {
+			for (int j = 0; j < input[i].length; j++) {
+				if (input[i][j] == 0) {
+					
+					try {
+						if (input[i-1][j-1] == -1) {
+						counter++;
+						}
+					} 
+					catch (ArrayIndexOutOfBoundsException e) {
+					}
+					
+					try {
+						if (input[i-1][j] == -1) {
+						counter++;
+						}
+					}
+					catch (ArrayIndexOutOfBoundsException e) {
+					}
+					
+					try {
+						if (input[i-1][j+1] == -1) {
+						counter++;
+						}
+					}
+					catch (ArrayIndexOutOfBoundsException e) {
+					}
+					
+					try {
+						if (input[i][j-1] == -1) {
+						counter++;
+						}
+					}
+					catch (ArrayIndexOutOfBoundsException e) {
+					}
+					
+					try {
+						if (input[i][j+1] == -1) {
+						counter++;
+						}
+					}
+					catch (ArrayIndexOutOfBoundsException e) {
+					}
+				
+					try {
+						if (input[i+1][j-1] == -1) {
+						counter++;
+						}
+					} 
+					catch (ArrayIndexOutOfBoundsException e) {
+					}
+				
+					try {
+						if (input[i+1][j] == -1) {
+						counter++;
+						}
+					} 
+					catch (ArrayIndexOutOfBoundsException e) {
+					}
+					
+					try {
+						if (input[i+1][j+1] == -1) {
+						counter++;
+						}
+					} catch (ArrayIndexOutOfBoundsException e) {
+					} 
+				} input[i][j] = counter;
+			} System.out.println();
+		}
+		
+	}	
+	
+	
+
+	/**
+	 * Determins if matrix is singular.
+	 * <p>
+	 * @param matrix - many many arrays :)
+	 * @return - If it is singular, returns true. Else-false.
+	 */
+	public static boolean isSingular (int[][] matrix) {
+		
+		if ((matrix[0][0]*matrix[1][1]*matrix[2][2] + 
+			matrix[0][1]*matrix[1][2]*matrix[2][0] +
+			matrix[0][2]*matrix[1][0]*matrix[2][1] -
+			matrix[2][0]*matrix[1][1]*matrix[0][2] -
+			matrix[2][1]*matrix[1][2]*matrix[0][0] -
+			matrix[2][2]*matrix[1][0]*matrix[0][1]) == 0) {
+			return true;
+			}
+		return false;
+		}
+
+	
+	
+	/**
+	 * Takes parameters form file, to form 2D array.
+	 * First line in file, consist two numbers, first number is number of rows
+	 * and second is number of columns.
+	 * Second and third line from file consists elements of first and second rows.
+	 * <p>
+	 * @param filename - file with parameters.
+	 * @return - 2D array
+	 */
+	public static String[][] arrayFromFile (String filename) {
+		
+		TextIO.readFile(filename);
+		String kordinate = TextIO.getln();
+		String parts[] = kordinate.split(" ");
+		int a = Integer.parseInt(parts[0]);
+		int b = Integer.parseInt(parts[1]);
+		
+		String[][] matrix2 = new String[a][b];
+		
+		String firstArr = TextIO.getln();
+		String parts1[] = firstArr.split(" ");
+		String secondArr = TextIO.getln();
+		String parts2[] = secondArr.split(" ");
+		
+		matrix2[0] = parts1;
+		matrix2[1] = parts2;
+		
+		for(int i = 0; i < matrix2.length; i++) {
+			for (int j = 0; j < matrix2[i].length; j++) {
+				System.out.print(matrix2[i][j] + " ");
+			} System.out.println();
+		}
+		
+		return matrix2;
+
+	}
+
+//	public static String[][] minesweeper (String[][] input) {
+//		
+//		
+//		
+//		
+//		
+//		return mine;
+//	}
+	
+	
+}

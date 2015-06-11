@@ -1,0 +1,54 @@
+package API;
+
+import java.awt.Font;
+
+public class Vjezbe1 {
+
+	public static void main(String[] args) {
+		
+//		System.out.println(getAreaOfSquare(-1));
+
+		Font f = new Font ("Times New Roman", Font.PLAIN, 18);
+		
+		int n = 0;
+		int m = 0;
+		
+		for (String num : args) {
+			n = Integer.parseInt(num);
+			m = Integer.parseInt(num);
+		}
+		
+		int divide = n/m;
+		
+		System.out.println(divide);
+		
+	}
+	
+	/**
+	 * Calculates area of square.
+	 * <p>
+	 * @param a - one side length
+	 * @return Area of Square
+	 */
+//	
+//	public static double getAreaOfSquare(double a) {
+//		
+//		if (a < 0) {
+//			throw new IllegalArgumentException("Negative number");
+//		}
+//
+//		double area = a*a;
+//		
+//		return area;
+//		
+//		
+//	}
+	
+	public static void printFontDetails (Font f) {
+		
+		
+		
+	}
+	
+	
+}

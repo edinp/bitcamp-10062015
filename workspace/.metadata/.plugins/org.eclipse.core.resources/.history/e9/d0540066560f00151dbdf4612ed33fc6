@@ -1,0 +1,42 @@
+package Arrays2D;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Predavanja1 {
+	
+//	public static void print2DArray (int[][] array) {
+//		for (int i = 0; i < array.length; i++) {
+//			for (int j = 0; j < array[i].length; j++) {
+//				System.out.print(array[i][j] + " ");
+//				
+//			
+//			} System.out.println();
+//			
+//		}
+//	}
+
+
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("How many rows");
+		int rows = in.nextInt();
+		System.out.println("How many columns");
+		int columns = in.nextInt();
+
+		int[][] nizz = new int[rows][columns];
+		
+		NizzHelper.fillNizz(nizz);
+		NizzHelper.print2DArray(nizz);
+		
+		System.out.println();
+		
+		NizzHelper.printColumn(nizz);
+		
+		in.close();
+
+	}
+
+}
